@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 50%; 
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<div class="header" id="myHeader">
+  <h1>Sample Images</h1>
+</div>
+
+
+<div class="row"> 
+  <div class="column">
+    <img src="static/Cars Dataset/test/Audi/1000.jpg">
+    <img src="static/Cars Dataset/test/Audi/1282.jpg" >
+    <img src="static/Cars Dataset/test/Audi/1279.jpg" >
+    <img src="static/Cars Dataset/test/Audi/1272.jpg" >
+    <img src="static/Cars Dataset/test/Audi/1292.jpg" >
+    <img src="static/Cars Dataset/test/Audi/1262.jpg" >
+  </div>
+  <div class="column">
+    <img src="static/Cars Dataset/test/Hyundai Creta/14.jpg">
+    <img src="static/Cars Dataset/test/Hyundai Creta/16.jpg" >
+    <img src="static/Cars Dataset/test/Hyundai Creta/36.jpg" >
+    <img src="stati/Cars Dataset/test/Hyundai Creta/55.jpg" >
+    <img src="static/Cars Dataset/test/Hyundai Creta/62.jpg" >
+  </div>  
+  <div class="column">
+    <img src="static/Cars Dataset/test/Swift/101.jpg" >
+    <img src="static/Cars Dataset/test/Swift/251.jpg" >
+    <img src="static/Cars Dataset/test/Swift/42.jpg" >
+    <img src="static/Cars Dataset/test/Swift/70.jpg" >
+    <img src="static/Cars Dataset/test/Swift/60.jpg">
+    <img src="static/Cars Dataset/test/Swift/43.jpg">
+    <img src="static/Cars Dataset/test/Swift/94.jpg" >
+  </div>
+  <script>
+
+var elements = document.getElementsByClassName("column");
+
+
+var i;
+
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
