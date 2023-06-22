@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
-import pickle
+import joblib as p
 import pandas as pd
 import numpy as np
 app=Flask(__name__)
 cors=CORS(app)
 try:
     with open('LinearRegressionModel.pkl', 'rb') as file:
-        model = pickle.load(file)
+        model = p.load(file)
 except Exception as e:
     print("Error loading the pickle file:", e)
 
